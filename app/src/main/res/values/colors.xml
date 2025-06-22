@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_primary">#388EDE</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="gray">#676565</color>
+    <color name="black">#000000</color>
+    <color name="transparent_black">#33000000</color> <!-- 20% transparansi hitam -->
+    <color name="blue">#64B5F6</color>
+
+</resources>

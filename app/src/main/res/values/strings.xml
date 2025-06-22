@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Sanitasi2</string>
+    <string name="lapor_air">LaporAir</string>
+    <string name="belum_punya_akun">Belum memiliki akun klik</string>
+    <string name="daftar">DAFTAR</string>
+    <string name="sudah_punya_akun">Sudah memiliki akun klik</string>
+    <string name="masuk">MASUK</string>
+    <string name="setetes_air_bersih_sangat_berarti">“Setetes air bersih\nsangat berarti”</string>
+
+    <!-- Login strings -->
+    <string name="username_hint">Nama pengguna</string>
+    <string name="password_hint">Kata sandi</string>
+    <string name="remember_me">Ingat saya</string>
+    <string name="login_button">MASUK</string>
+    <string name="forgot_password">lupa kata sandi?</string>
+    <string name="register_prompt">Tidak memiliki akun? </string>
+    <string name="register_link">DAFTAR</string>
+    <string name="or_login_with">Atau login dengan</string>
+    <string name="whatsapp">Whatsapp</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="nama_pengguna">Nama pengguna</string>
+    <string name="ingat_saya">Ingat saya</string>
+
+    <!-- Facebook SDK -->
+    <string name="facebook_app_id">1363590118239404</string>
+    <string name="facebook_client_token">d232b9cc5e98c545cf5f71d5217147eb</string>
+    <string name="fb_login_protocol_scheme">fb1363590118239404</string>
+</resources>

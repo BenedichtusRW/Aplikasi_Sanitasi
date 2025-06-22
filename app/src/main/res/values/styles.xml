@@ -1,0 +1,14 @@
+<resources>
+    <!-- Style dasar aplikasi -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+        <!-- ... -->
+    </style>
+
+    <!-- Tambahkan style TextInputLayout khusus password di sini -->
+    <style name="PasswordTextInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="endIconMode">password_toggle</item>
+        <item name="passwordToggleEnabled">true</item>
+        <item name="passwordToggleTint">@color/black</item>
+        <item name="boxStrokeColor">@color/black</item>
+    </style>
+</resources>
