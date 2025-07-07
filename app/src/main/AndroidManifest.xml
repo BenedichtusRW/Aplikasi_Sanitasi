@@ -40,9 +40,12 @@
             android:authorities="com.facebook.app.FacebookContentProvider1363590118239404"
             android:exported="true" />
 
+        <!-- Reset Password -->
+        <activity android:name=".ResetPasswordActivity" />
         <!-- Login Activity -->
         <activity android:name=".LoginActivity" />
-
+        <!-- Regsitrasi Activity -->
+        <activity android:name=".RegistrasiActivity" />
         <!-- Main Activity -->
         <activity
             android:name=".MainActivity"

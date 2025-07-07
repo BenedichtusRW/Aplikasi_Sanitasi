@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "101662568916",
+    "project_id": "login-c9c8c",
+    "storage_bucket": "login-c9c8c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101662568916:android:2fd25f85a513b9747c6641",
+        "android_client_info": {
+          "package_name": "com.example.sanitasi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101662568916-p5pkah0m6gm320vqsuonc9nd3ik5rqdr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sanitasi",
+            "certificate_hash": "71cf5ce82545efd6d9d78e0734c7fb34d4864c63"
+          }
+        },
+        {
+          "client_id": "101662568916-hup0b2rgpt3ml88n48a1e7l3ngnhii44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDABXozVAN3qpWsShPUx4jI-ht9lPbDJqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101662568916-hup0b2rgpt3ml88n48a1e7l3ngnhii44.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

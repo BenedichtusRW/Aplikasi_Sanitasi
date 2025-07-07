@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 btnDaftar.setBackgroundColor(getResources().getColor(R.color.red));
                 // Arahkan ke halaman daftar
-                //Intent intent = new Intent(MainActivity.this, RegisterActivity.class); // Pastikan class-nya sesuai
-                //startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, RegistrasiActivity.class); // ← Ini AKTIF
+                startActivity(intent);
             }
         });
 
@@ -38,6 +38,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }

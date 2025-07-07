@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -25,6 +26,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -32,7 +34,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -40,21 +41,28 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation ("androidx.appcompat:appcompat:1.6.1")
-    implementation ("com.google.android.material:material:1.9.0")
-    implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
-
-    // Jika kamu pakai vector support atau font custom, pastikan juga ini:
-    implementation ("androidx.core:core-ktx:1.12.0")
-    implementation ("com.google.android.material:material:1.6.0")
 
     // Google Sign-In
-    implementation ("com.google.android.gms:play-services-auth:21.0.0")
+    implementation("com.google.android.gms:play-services-auth:21.0.0")
 
-    // Facebook SDK
-    implementation ("com.facebook.android:facebook-login:latest.release")
+    // Facebook SDK - pakai versi eksplisit, jangan latest.release
+    implementation("com.facebook.android:facebook-login:16.1.3")
 
-    implementation ("com.google.android.gms:play-services-auth:20.7.0")
+    // Firebase Authentication
+    implementation("com.google.firebase:firebase-auth:22.3.1")
+
+    // Core KTX
+    implementation("androidx.core:core-ktx:1.12.0")
+
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:33.15.0"))
 
 
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics")
+
+
+    // Add the dependencies for any other desired Firebase products
+    // https://firebase.google.com/docs/android/setup#available-libraries
 }
