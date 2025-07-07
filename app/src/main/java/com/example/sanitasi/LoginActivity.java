@@ -5,24 +5,27 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.AccessToken;
+import com.google.android.gms.tasks.Task;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.facebook.FacebookActivity;
+import com.google.android.gms.auth.api.signin.*;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.*;
 
 import java.util.Arrays;
 
@@ -31,35 +34,39 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputEditText editUsername, editPassword;
     private CheckBox checkboxRemember;
     private Button btnMasuk, btnFacebook, btnGoogle;
-
+    private TextView registerText, forgotPasswordText;
     private SharedPreferences preferences;
     private static final String PREF_NAME = "loginPrefs";
-
     private boolean isPasswordVisible = false;
+
     private CallbackManager callbackManager;
+    private static final int RC_SIGN_IN = 100;
+    private GoogleSignInClient mGoogleSignInClient;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Facebook SDK setup (penting)
         FacebookSdk.setClientToken(getString(R.string.facebook_client_token));
         FacebookSdk.sdkInitialize(getApplicationContext());
 
         setContentView(R.layout.activity_login);
 
-        // Inisialisasi view
+        mAuth = FirebaseAuth.getInstance();
+
         editUsername = findViewById(R.id.usernameEditText);
         editPassword = findViewById(R.id.passwordEditText);
         checkboxRemember = findViewById(R.id.rememberCheckBox);
         btnMasuk = findViewById(R.id.loginButton);
         btnFacebook = findViewById(R.id.btnFacebook);
         btnGoogle = findViewById(R.id.btnGoogle);
+        registerText = findViewById(R.id.registerText);
+        forgotPasswordText = findViewById(R.id.forgotPasswordText);
 
         preferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         checkRememberedCredentials();
 
-        // Tampilkan/sembunyikan password
         TextInputLayout passwordLayout = findViewById(R.id.passwordTextInputLayout);
         if (passwordLayout != null) {
             passwordLayout.setEndIconOnClickListener(v -> {
@@ -73,7 +80,6 @@ public class LoginActivity extends AppCompatActivity {
             });
         }
 
-        // Tombol login manual
         btnMasuk.setOnClickListener(view -> {
             String username = editUsername.getText().toString().trim();
             String password = editPassword.getText().toString().trim();
@@ -97,7 +103,18 @@ public class LoginActivity extends AppCompatActivity {
             finish();
         });
 
-        // FACEBOOK LOGIN
+        // ==== Tambahan: Navigasi ke Registrasi dan Reset Password ====
+        registerText.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, RegistrasiActivity.class);
+            startActivity(intent);
+        });
+
+        forgotPasswordText.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, ResetPasswordActivity.class);
+            startActivity(intent);
+        });
+
+        // ===== FACEBOOK LOGIN =====
         callbackManager = CallbackManager.Factory.create();
 
         btnFacebook.setOnClickListener(v -> {
@@ -111,9 +128,7 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(LoginResult loginResult) {
                             AccessToken token = loginResult.getAccessToken();
-                            Toast.makeText(LoginActivity.this, "Login Facebook berhasil", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                            finish();
+                            handleFacebookAccessToken(token);
                         }
 
                         @Override
@@ -129,9 +144,46 @@ public class LoginActivity extends AppCompatActivity {
                     });
         });
 
-        // Tombol Google (belum diimplementasi)
-        btnGoogle.setOnClickListener(v ->
-                Toast.makeText(this, "Login via Google belum tersedia", Toast.LENGTH_SHORT).show());
+        // ===== GOOGLE LOGIN =====
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        btnGoogle.setOnClickListener(v -> {
+            Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+            startActivityForResult(signInIntent, RC_SIGN_IN);
+        });
+    }
+
+    private void handleFacebookAccessToken(AccessToken token) {
+        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(this, "Login Facebook sukses", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
+                    } else {
+                        Toast.makeText(this, "Autentikasi Facebook gagal", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void firebaseAuthWithGoogle(String idToken) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(this, "Login Google sukses", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
+                    } else {
+                        Toast.makeText(this, "Autentikasi Google gagal", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     private void checkRememberedCredentials() {
@@ -146,6 +198,18 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        callbackManager.onActivityResult(requestCode, resultCode, data);
+
+        if (callbackManager != null)
+            callbackManager.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == RC_SIGN_IN) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                firebaseAuthWithGoogle(account.getIdToken());
+            } catch (ApiException e) {
+                Toast.makeText(this, "Login Google gagal: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
