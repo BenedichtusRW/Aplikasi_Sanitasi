@@ -47,6 +47,8 @@
         <!-- Regsitrasi Activity -->
         <activity android:name=".RegistrasiActivity" />
         <!-- Main Activity -->
+        <activity android:name=".StatistikActivity" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
