@@ -212,6 +212,19 @@
                 android:orientation="vertical"
                 android:gravity="center">
 
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_home" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Statistik"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
@@ -221,7 +234,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Beranda"
-                    android:textSize="12sp" />
+                    android:textSize="sp" />
             </LinearLayout>
 
             <!-- Statistik -->
@@ -237,12 +250,6 @@
                     android:layout_height="32dp"
                     android:src="@drawable/ic_statistic" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Statistik"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
             </LinearLayout>
 
             <!-- Laporan -->
