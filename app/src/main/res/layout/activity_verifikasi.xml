@@ -5,187 +5,206 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
-    <!-- Gambar background PNG -->
-    <ImageView
-        android:id="@+id/bgTop"
-        android:layout_marginTop="100dp"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/verifikasi_otp_bg" />
+    <!-- Header: Gambar + Label VERIFIKASI -->
 
-    <!-- Konten -->
-    <ScrollView
+    <!-- Konten utama -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="140dp"
-        android:fillViewport="true">
+        android:layout_height="300dp">
+
+        <ImageView
+            android:id="@+id/bgTop"
+            android:layout_width="match_parent"
+            android:layout_height="142dp"
+            android:layout_marginTop="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/verifikasi_otp_bg" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp"
-            android:gravity="center_horizontal">
+            android:id="@+id/lblVerifikasiContainer"
+            android:layout_width="209dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="120dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_verifikasi_label"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
 
-            <!-- Label VERIFIKASI -->
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_shield_check"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="Ikon Verifikasi" />
+
             <TextView
                 android:id="@+id/lblVerifikasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_verifikasi_label"
-                android:drawableStart="@drawable/ic_shield_check"
-                android:drawablePadding="8dp"
                 android:text="VERIFIKASI"
+                android:textColor="@android:color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:fontFamily="@font/poppins_regular"
-                android:paddingHorizontal="24dp"
-                android:paddingVertical="10dp"
-                android:gravity="center" />
+                android:fontFamily="@font/poppins_regular" />
+        </LinearLayout>
 
-            <!-- Teks Keterangan -->
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
             <TextView
                 android:id="@+id/txtKeterangan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Kami telah mengirimkan Kode OTP,\nsilahkan cek dan isi kode OTP."
-                android:gravity="center"
-                android:layout_marginTop="24dp"
-                android:textSize="12sp"
-                android:textColor="@android:color/black"
-                android:fontFamily="@font/poppins_regular" />
 
-            <!-- Email -->
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:text="Kami telah mengirimkan Kode OTP,\nsilahkan cek dan isi kode OTP."
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
             <TextView
                 android:id="@+id/txtEmailVerifikasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="email@domain.com"
-                android:textSize="14sp"
-                android:textColor="@android:color/black"
+                android:layout_marginTop="4dp"
                 android:fontFamily="@font/poppins_regular"
-                android:layout_marginTop="8dp" />
-
-            <!-- Label OTP -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kode OTP"
-                android:textSize="18sp"
-                android:layout_marginTop="24dp"
+                android:text="email@domain.com"
                 android:textColor="@android:color/black"
-                android:fontFamily="@font/poppins_regular" />
+                android:textSize="14sp" />
 
-            <!-- OTP Kotak -->
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="12dp"
-                android:gravity="center">
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Kode OTP"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/otp1"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:inputType="number"
-                    android:gravity="center"
-                    android:maxLength="1"
+                    android:layout_marginEnd="35dp"
                     android:background="@drawable/bg_input_outline"
-                    android:textSize="18sp"
-                    android:layout_margin="4dp"
-                    android:fontFamily="@font/poppins_regular" />
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textSize="18sp" />
 
                 <EditText
+                    android:id="@+id/otp2"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:inputType="number"
-                    android:gravity="center"
-                    android:maxLength="1"
+                    android:layout_marginEnd="35dp"
                     android:background="@drawable/bg_input_outline"
-                    android:textSize="18sp"
-                    android:layout_margin="4dp"
-                    android:fontFamily="@font/poppins_regular" />
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textSize="18sp" />
 
                 <EditText
+                    android:id="@+id/otp3"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:inputType="number"
-                    android:gravity="center"
-                    android:maxLength="1"
+                    android:layout_marginEnd="35dp"
                     android:background="@drawable/bg_input_outline"
-                    android:textSize="18sp"
-                    android:layout_margin="4dp"
-                    android:fontFamily="@font/poppins_regular" />
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textSize="18sp" />
 
                 <EditText
+                    android:id="@+id/otp4"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:inputType="number"
-                    android:gravity="center"
-                    android:maxLength="1"
+                    android:layout_marginEnd="35dp"
                     android:background="@drawable/bg_input_outline"
-                    android:textSize="18sp"
-                    android:layout_margin="4dp"
-                    android:fontFamily="@font/poppins_regular" />
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textSize="18sp" />
             </LinearLayout>
 
-            <!-- Kirim Ulang -->
             <Button
                 android:id="@+id/btnKirimUlang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Kirim kode pemulihan"
                 android:layout_marginTop="16dp"
-                android:textColor="@android:color/white"
                 android:backgroundTint="#64B5F6"
-                app:cornerRadius="30dp"
-                android:fontFamily="@font/poppins_regular" />
+                android:fontFamily="@font/poppins_regular"
+                android:text="Kirim kode pemulihan"
+                android:textColor="@android:color/white"
+                app:cornerRadius="30dp" />
 
-            <!-- DAFTAR -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Belum memiliki akun klik"
                 android:layout_marginTop="32dp"
-                android:textColor="@android:color/black"
-                android:fontFamily="@font/poppins_regular" />
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Belum memiliki akun klik"
+                android:textColor="@android:color/black" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnDaftar"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@android:color/white"
+                android:fontFamily="@font/poppins_regular"
                 android:text="DAFTAR"
                 android:textColor="@android:color/black"
-                android:backgroundTint="@android:color/white"
                 app:cornerRadius="30dp"
                 app:strokeColor="@android:color/black"
-                app:strokeWidth="2dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/poppins_regular" />
+                app:strokeWidth="2dp" />
 
-            <!-- MASUK -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sudah memiliki akun klik"
                 android:layout_marginTop="24dp"
-                android:textColor="@android:color/black"
-                android:fontFamily="@font/poppins_regular" />
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Sudah memiliki akun klik"
+                android:textColor="@android:color/black" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnMasuk"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@android:color/white"
+                android:fontFamily="@font/poppins_regular"
                 android:text="MASUK"
                 android:textColor="@android:color/black"
-                android:backgroundTint="@android:color/white"
                 app:cornerRadius="30dp"
                 app:strokeColor="@android:color/black"
-                app:strokeWidth="2dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/poppins_regular" />
+                app:strokeWidth="2dp" />
         </LinearLayout>
     </ScrollView>
 </FrameLayout>
