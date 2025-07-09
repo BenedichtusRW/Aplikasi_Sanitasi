@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.sanitasi">
@@ -12,20 +13,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sanitasi"
         tools:targetApi="31">
-
-        <!-- Facebook SDK setup -->
+        <activity
+            android:name=".HomeActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_home2" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" /> <!-- Facebook SDK setup -->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
-
         <meta-data
             android:name="com.facebook.sdk.ClientToken"
             android:value="@string/facebook_client_token" />
-
         <meta-data
             android:name="com.facebook.sdk.FacebookAppId"
             android:value="@string/facebook_app_id" />
-
         <meta-data
             android:name="com.facebook.sdk.CallbackOffset"
             android:value="0" />
@@ -38,24 +41,18 @@
         <provider
             android:name="com.facebook.FacebookContentProvider"
             android:authorities="com.facebook.app.FacebookContentProvider1363590118239404"
-            android:exported="true" />
-
-        <!-- Statistiik Activity -->
-        <activity android:name=".StatistikActivity" />
-        <!-- Verifikasi Activity -->
-        <activity android:name=".VerifikasiActivity" />
-        <!-- Reset Password -->
-        <activity android:name=".ResetPasswordActivity" />
-        <!-- Login Activity -->
-        <activity android:name=".LoginActivity" />
-        <!-- Regsitrasi Activity -->
-        <activity android:name=".RegistrasiActivity" />
-        <!-- Main Activity -->
+            android:exported="true" /> <!-- Statistiik Activity -->
+        <activity android:name=".StatistikActivity" /> <!-- Verifikasi Activity -->
+        <activity android:name=".VerifikasiActivity" /> <!-- Reset Password -->
+        <activity android:name=".ResetPasswordActivity" /> <!-- Login Activity -->
+        <activity android:name=".LoginActivity" /> <!-- Regsitrasi Activity -->
+        <activity android:name=".RegistrasiActivity" /> <!-- Main Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
