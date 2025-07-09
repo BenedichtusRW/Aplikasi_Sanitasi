@@ -224,7 +224,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Beranda"
-                    android:textSize="sp" />
+                    android:textSize="12sp" />
 
                 <ImageButton
                     android:id="@+id/imageButton4"
@@ -245,7 +245,7 @@
                 <ImageView
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/ic_statistic" />
+                    android:src="@drawable/statistik" />
 
                 <TextView
                     android:layout_width="wrap_content"

@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_primary">
+    android:background="@color/blue_primary"
+    tools:context=".LoginActivity">
 
     <!-- Latar putih melengkung -->
     <View
@@ -17,65 +18,58 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Container Login -->
+    <!-- Kontainer Login -->
     <LinearLayout
         android:id="@+id/loginContainer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:gravity="center_horizontal"
         android:orientation="vertical"
+        android:gravity="center_horizontal"
         android:paddingHorizontal="32dp"
         android:paddingTop="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="@id/whiteRoundedBackground"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/whiteRoundedBackground">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <!-- Username -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/usernameTextInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/LoginRegisterInputStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
-            app:boxCornerRadiusBottomEnd="30dp"
-            app:boxCornerRadiusBottomStart="30dp"
-            app:boxCornerRadiusTopEnd="30dp"
-            app:boxCornerRadiusTopStart="30dp"
-            app:startIconDrawable="@drawable/ic_user"
-            app:startIconTint="@color/black">
+            app:startIconDrawable="@drawable/ic_user">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/usernameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:fontFamily="@font/poppins_regular"
-                android:hint="@string/nama_pengguna" />
+                android:hint="Nama Pengguna"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:fontFamily="@font/poppins_regular"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Password -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordTextInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/LoginRegisterInputStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            app:boxCornerRadiusBottomEnd="30dp"
-            app:boxCornerRadiusBottomStart="30dp"
-            app:boxCornerRadiusTopEnd="30dp"
-            app:boxCornerRadiusTopStart="30dp"
-            app:endIconMode="password_toggle"
-            app:endIconTint="@color/black"
             app:startIconDrawable="@drawable/ic_lock"
-            app:startIconTint="@color/black">
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordEditText"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:fontFamily="@font/poppins_regular"
-                android:hint="Kata sandi"
-                android:inputType="textPassword" />
+                android:hint="Kata Sandi"
+                android:inputType="textPassword"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:fontFamily="@font/poppins_regular"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Ingat saya -->
@@ -83,15 +77,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp">
-
             <CheckBox
                 android:id="@+id/rememberCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
                 android:buttonTint="@color/black"
                 android:fontFamily="@font/poppins_regular"
-                android:text="@string/ingat_saya" />
+                android:text="Ingat Saya"/>
         </RelativeLayout>
 
         <!-- Tombol Masuk -->
@@ -100,106 +92,98 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="12dp"
-            android:backgroundTint="@color/blue_primary"
-            android:fontFamily="@font/poppins_semibold"
             android:text="MASUK"
             android:textColor="@color/white"
-            app:cornerRadius="30dp" />
+            android:backgroundTint="@color/blue_primary"
+            app:cornerRadius="30dp"
+            android:fontFamily="@font/poppins_semibold"/>
 
-        <!-- Lupa kata sandi -->
+        <!-- Lupa Password -->
         <TextView
             android:id="@+id/forgotPasswordText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:fontFamily="@font/poppins_semibold"
             android:gravity="center"
-            android:text="lupa kata sandi?"
-            android:textAlignment="center"
-            android:textColor="@color/red" />
+            android:text="Lupa kata sandi?"
+            android:textColor="@color/red"
+            android:fontFamily="@font/poppins_semibold"/>
 
-        <!-- Link daftar -->
+        <!-- Punya akun? -->
         <LinearLayout
-            android:id="@+id/registerContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center">
 
             <TextView
-                android:id="@+id/noAccountText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Tidak memiliki akun? "
-                android:textColor="@color/black" />
+                android:text="Tidak punya akun? "
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_regular"/>
 
             <TextView
                 android:id="@+id/registerText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_bold"
                 android:text="DAFTAR"
-                android:textColor="@color/red" />
+                android:textColor="@color/red"
+                android:fontFamily="@font/poppins_bold"/>
         </LinearLayout>
 
         <!-- Divider -->
         <TextView
-            android:id="@+id/socialDivider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:fontFamily="@font/poppins_regular"
-            android:gravity="center"
             android:text="───────  Atau login dengan  ───────"
-            android:textColor="@color/black" />
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_regular"/>
 
         <!-- Tombol Sosial -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:layout_marginBottom="10dp"
             android:gravity="center"
             android:orientation="vertical">
 
-            <!-- Facebook -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnFacebook"
                 android:layout_width="200dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="15dp"
                 android:backgroundTint="@color/white"
-                android:fontFamily="@font/poppins_semibold"
                 android:text="Facebook"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:gravity="start|center_vertical"
-                app:cornerRadius="30dp"
                 app:icon="@drawable/ic_facebook"
-                app:iconGravity="start"
+                app:iconTint="@null"
                 app:iconPadding="12dp"
-                app:iconTint="@null" />
+                app:iconGravity="start"
+                app:cornerRadius="30dp"
+                android:fontFamily="@font/poppins_semibold"/>
 
-            <!-- Google -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnGoogle"
                 android:layout_width="200dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="@color/white"
-                android:fontFamily="@font/poppins_semibold"
                 android:text="Google"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:gravity="start|center_vertical"
-                app:cornerRadius="30dp"
                 app:icon="@drawable/ic_google"
-                app:iconGravity="start"
+                app:iconTint="@null"
                 app:iconPadding="12dp"
-                app:iconTint="@null" />
+                app:iconGravity="start"
+                app:cornerRadius="30dp"
+                android:fontFamily="@font/poppins_semibold"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
