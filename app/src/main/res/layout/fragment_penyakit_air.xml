@@ -23,10 +23,10 @@
 
             <ImageView
                 android:id="@+id/backButton"
-                android:layout_width="30dp"
+                android:layout_width="wrap_content"
                 android:layout_height="25dp"
-                android:src="@drawable/ic_back_arrow"
-                android:contentDescription="Back" />
+                android:contentDescription="Back"
+                android:src="@drawable/ic_back_arrow" />
         </LinearLayout>
 
         <!-- Judul dengan kapsul biru -->
