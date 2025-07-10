@@ -1,14 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.LaporanFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="#FFFFFF">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-</FrameLayout>
+        <!-- Judul LaporAir dengan kapsul -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvCapsule"
+                android:layout_width="206dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="100dp"
+                android:gravity="center"
+                android:paddingVertical="3dp"
+                android:paddingHorizontal="24dp"
+                android:background="@drawable/bg_capsule_laporair"
+                android:text="LaporAir"
+                android:textColor="#000000"
+                android:textSize="28sp"
+                android:fontFamily="@font/poppins_regular"
+                android:textStyle="bold" />
+
+        </FrameLayout>
+
+        <!-- Subjudul -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data air bersih dan sanitasi"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="#888888"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Daftar kartu laporan -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <!-- Kartu laporan 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/rectangle_beranda"
+                android:padding="12dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bejo, 36, RT1 RW2, Sidosari, Natar, Lampung selatan, Laki - laki"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🧻Berbau dan air kotor, sanitasi pembuangan akibatnya terhambat karena air kotor"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    android:layout_marginVertical="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bejo, 36, RT1 RW2, Sidosari, Natar, Lampung selatan, Laki - laki"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🧻Berbau dan air kotor, sanitasi pembuangan akibatnya terhambat karena air kotor"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    android:layout_marginVertical="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bejo, 36, RT1 RW2, Sidosari, Natar, Lampung selatan, Laki - laki"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🧻Berbau dan air kotor, sanitasi pembuangan akibatnya terhambat karena air kotor"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    android:layout_marginVertical="8dp" />
+
+            </LinearLayout>
+
+            <!-- Duplikat jika perlu -->
+            <!-- ... -->
+        </LinearLayout>
+
+        <!-- Ikon + teks: Grafik air -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_grafik"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grafik air bersih dan sanitasi"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Ikon + teks: Penyakit air -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_penyakit"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informasi penyakit akibat air"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -161,8 +161,9 @@
                 android:backgroundTint="#64B5F6"
                 android:fontFamily="@font/poppins_regular"
                 android:text="Kirim kode pemulihan"
-                android:textColor="@android:color/white"
-                app:cornerRadius="30dp" />
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                app:cornerRadius="10dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -181,7 +182,7 @@
                 android:fontFamily="@font/poppins_regular"
                 android:text="DAFTAR"
                 android:textColor="@android:color/black"
-                app:cornerRadius="30dp"
+                app:cornerRadius="24dp"
                 app:strokeColor="@android:color/black"
                 app:strokeWidth="2dp" />
 
@@ -202,7 +203,7 @@
                 android:fontFamily="@font/poppins_regular"
                 android:text="MASUK"
                 android:textColor="@android:color/black"
-                app:cornerRadius="30dp"
+                app:cornerRadius="24dp"
                 app:strokeColor="@android:color/black"
                 app:strokeWidth="2dp" />
         </LinearLayout>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:padding="24dp">
+
+    <!-- Judul -->
+    <TextView
+        android:id="@+id/titleResetPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:background="@drawable/outline_judul_kata_sandi_baru"
+        android:padding="8dp"
+        android:text="KATA SANDI BARU"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_regular" />
+
+    <!-- Label Masukkan Kata Sandi -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Masukkan Kata Sandi"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/poppins_regular" />
+
+    <!-- Input Kata Sandi -->
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/outline_kata_sandi_baru"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/iconoir_password_check" />
+
+        <EditText
+            android:id="@+id/inputPassword"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="********"
+            android:inputType="textPassword"
+            android:paddingHorizontal="8dp"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_lock" />
+    </LinearLayout>
+
+    <!-- Label Konfirmasi -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Konfirmasi Kata Sandi"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/poppins_regular" />
+
+    <!-- Input Konfirmasi Kata Sandi -->
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/outline_kata_sandi_baru"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/iconoir_password_check" />
+
+        <EditText
+            android:id="@+id/inputConfirmPassword"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="********"
+            android:inputType="textPassword"
+            android:paddingHorizontal="8dp"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_lock" />
+    </LinearLayout>
+
+    <!-- Tombol KIRIM -->
+    <Button
+        android:id="@+id/btnKirimPassword"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#64B5F6"
+        android:fontFamily="@font/poppins_regular"
+        android:text="KIRIM"
+        android:textColor="@android:color/black"
+        app:cornerRadius="25dp" />
+
+</LinearLayout>

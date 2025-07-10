@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_primary"
-    tools:context=".LoginActivity">
+    tools:context=".auth.LoginActivity">
 
     <!-- Latar putih melengkung -->
     <View
@@ -89,13 +89,13 @@
         <!-- Tombol Masuk -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/loginButton"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="48dp"
             android:layout_marginTop="12dp"
             android:text="MASUK"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:backgroundTint="@color/blue_primary"
-            app:cornerRadius="30dp"
+            app:cornerRadius="24dp"
             android:fontFamily="@font/poppins_semibold"/>
 
         <!-- Lupa Password -->
@@ -165,7 +165,7 @@
                 app:iconTint="@null"
                 app:iconPadding="12dp"
                 app:iconGravity="start"
-                app:cornerRadius="30dp"
+                app:cornerRadius="24dp"
                 android:fontFamily="@font/poppins_semibold"/>
 
             <com.google.android.material.button.MaterialButton
@@ -182,7 +182,7 @@
                 app:iconTint="@null"
                 app:iconPadding="12dp"
                 app:iconGravity="start"
-                app:cornerRadius="30dp"
+                app:cornerRadius="24dp"
                 android:fontFamily="@font/poppins_semibold"/>
         </LinearLayout>
     </LinearLayout>

@@ -33,4 +33,10 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string name="nav_beranda">Beranda</string>
+    <string name="nav_statistik">Statistik</string>
+    <string name="nav_laporan">Laporan</string>
+    <string name="nav_profile">Profile</string>
+
 </resources>

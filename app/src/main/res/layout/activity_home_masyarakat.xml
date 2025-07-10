@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+
+    <!-- Kontainer fragment -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavContainer"
+        android:layout_marginBottom="-82dp" />
+
+    <!-- Bottom NAV container -->
+    <FrameLayout
+        android:id="@+id/bottomNavContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:clipChildren="false">
+
+        <!-- NAV PASIF -->
+        <LinearLayout
+            android:id="@+id/customBottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@drawable/ic_lekuk_trans"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="4"
+            android:clipChildren="false">
+
+            <include android:id="@+id/nav_beranda" layout="@layout/item_bottom_nav_masyarakat" />
+            <include android:id="@+id/nav_statistik" layout="@layout/item_bottom_nav_masyarakat" />
+            <include android:id="@+id/nav_laporan" layout="@layout/item_bottom_nav_masyarakat" />
+            <include android:id="@+id/nav_profile" layout="@layout/item_bottom_nav_masyarakat" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- ACTIVE NAV DIPINDAHKAN DI LUAR -->
+    <FrameLayout
+        android:id="@+id/activeNav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="52dp"
+        android:clipChildren="false"
+        android:layout_gravity="center_horizontal"
+        android:translationX="0dp">
+
+        <!-- Isi lekukan, lingkaran, ikon -->
+        <ImageView
+            android:id="@+id/lekuNav"
+            android:layout_width="115dp"
+            android:layout_height="40dp"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="-2dp"
+            android:src="@drawable/ic_lekuk_nav" />
+
+        <ImageView
+            android:id="@+id/bgHighlight"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="-24dp"
+            android:src="@drawable/bg_blue_circle" />
+
+        <ImageView
+            android:id="@+id/iconActive"
+            android:layout_width="38dp"
+            android:layout_height="32dp"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="-18dp"
+            android:src="@drawable/ic_home_black" />
+    </FrameLayout>
+</RelativeLayout>

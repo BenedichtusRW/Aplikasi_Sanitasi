@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:clipToPadding="false"
+    android:paddingBottom="32dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Back button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="start"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_back_arrow"
+                android:contentDescription="Back" />
+        </LinearLayout>
+
+        <!-- Judul dengan kapsul biru -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <!-- Kapsul biru -->
+            <ImageView
+                android:id="@+id/imgBanner"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img"
+                android:layout_marginTop="90dp" />
+
+            <!-- Teks LaporAir di atas kapsul -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="LaporAir"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:layout_marginTop="50dp" />
+        </FrameLayout>
+
+        <!-- Subjudul -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Informasi Penyakit Akibat Air"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="#888888"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:src="@drawable/poster"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Ikon + teks: Penyakit air -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_grafik"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="Penyakit ikon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grafik Air Bersih dan Sanitasi"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
