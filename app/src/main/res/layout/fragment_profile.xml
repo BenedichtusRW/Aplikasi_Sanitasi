@@ -1,14 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".masyarakat.fragments.ProfileFragment">
+    android:padding="16dp"
+    android:background="#FFFFFF">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-</FrameLayout>
+        <!-- Judul dengan kapsul biru -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <!-- Kapsul biru -->
+            <ImageView
+                android:id="@+id/imgBanner"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img"
+                android:layout_marginTop="100dp" />
+
+            <!-- Teks LaporAir di atas kapsul -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="LaporAir"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginTop="50dp" />
+        </FrameLayout>
+
+        <!-- Subjudul -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adalah aplikasi air bersih dan sanitasi"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="#888888"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Input Fields -->
+        <EditText
+            android:id="@+id/etNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama pengguna"
+            android:background="@drawable/rounded_edittext"
+            android:padding="12dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/poppins_regular"/>
+
+        <EditText
+            android:id="@+id/etUmur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Umur"
+            android:background="@drawable/rounded_edittext"
+            android:padding="12dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/poppins_regular"/>
+
+        <EditText
+            android:id="@+id/etDomisili"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Domisili"
+            android:background="@drawable/rounded_edittext"
+            android:padding="12dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/poppins_regular"/>
+
+        <EditText
+            android:id="@+id/etAlamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Alamat (sesuai KTP)"
+            android:background="@drawable/rounded_edittext"
+            android:padding="12dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/poppins_regular"/>
+
+        <EditText
+            android:id="@+id/etJenisKelamin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Jenis kelamin"
+            android:background="@drawable/rounded_edittext"
+            android:padding="12dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/poppins_regular"/>
+
+        <!-- Tombol Konfirmasi -->
+        <Button
+            android:id="@+id/btnKonfirmasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Konfirmasi"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#77C9FF"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/poppins_bold"/>
+
+        <!-- Tombol Ubah -->
+        <Button
+            android:id="@+id/btnUbah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ubah"
+            android:textColor="#000000"
+            android:background="@drawable/outline_button"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/poppins_regular"/>
+
+    </LinearLayout>
+</ScrollView>
